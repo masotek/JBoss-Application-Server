@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>simpleapp</artifactId>
+        <groupId>com.isa</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>simple-ear</artifactId>
+    <packaging>ear</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.isa</groupId>
+            <artifactId>simple-jar</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.isa</groupId>
+            <artifactId>simple-war</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.10.1</version>
+                <configuration>
+                    <!--<unpackTypes>war,jar</unpackTypes>-->
+                    <modules>
+                        <jarModule>
+                            <groupId>com.isa</groupId>
+                            <artifactId>simple-jar</artifactId>
+                            <unpack>true</unpack>
+                        </jarModule>
+                        <webModule>
+                            <groupId>com.isa</groupId>
+                            <artifactId>simple-war</artifactId>
+                            <context-root>simple-app</context-root>
+                            <unpack>true</unpack>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

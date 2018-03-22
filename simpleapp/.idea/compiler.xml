@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="simpleear" />
+        <module name="simplejar" />
+        <module name="simplewar" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="simpleapp" target="1.8" />
+      <module name="simpleear" target="1.8" />
+      <module name="simplejar" target="1.8" />
+      <module name="simplewar" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
